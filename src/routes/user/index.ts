@@ -11,6 +11,7 @@ import { isStaffOrOwnerMiddleware } from "../../middlewares/isStaffOrOwner.middl
 import { updateUserValidationFieldsMiddleware } from "../../middlewares/updateUserValidationFields.middleware";
 
 import { createUserSchema, updateUserSchema } from "../../schemas/user.schema";
+import { filterUsersController } from "../../controllers/user/filterUsers.controller";
 
 const router = Router();
 
@@ -27,6 +28,8 @@ export const userRoutes = (): Router => {
   router.get("", isStaffOrOwnerMiddleware, readAllUsersController);
 
   router.get("/:userId", isStaffOrOwnerMiddleware, retrieveUserController);
+
+  router.get("/filter", isStaffOrOwnerMiddleware, filterUsersController);
 
   router.patch(
     "/:userId",
