@@ -27,9 +27,9 @@ export const userRoutes = (): Router => {
 
   router.get("", isStaffOrOwnerMiddleware, readAllUsersController);
 
-  router.get("/:userId", isStaffOrOwnerMiddleware, retrieveUserController);
-
   router.get("/filter", isStaffOrOwnerMiddleware, filterUsersController);
+
+  router.get("/:userId", isStaffOrOwnerMiddleware, retrieveUserController);
 
   router.patch(
     "/:userId",
