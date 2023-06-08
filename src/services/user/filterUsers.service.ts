@@ -2,7 +2,7 @@ import { AppDataSource } from "../../data-source";
 import { AppError } from "../../errors";
 import { User } from "../../entities/user";
 
-export const filterUsers = async (partialName: string) => {
+export const filterUsersService = async (partialName: string) => {
   if (partialName.length < 4) {
     throw new AppError(400, "no mínimo 4 letras");
   }
