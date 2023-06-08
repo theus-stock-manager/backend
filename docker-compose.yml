@@ -1,0 +1,47 @@
+# version: "3.9"
+
+# services:
+#   database:
+#     container_name: database
+#     image: postgres:latest
+#     env_file:
+#       - ./backend/.env
+#     ports:
+#       - 5050:5432
+#     healthcheck:
+#       test: ["CMD-SHELL", "pg_is_ready -U theus -d stockmanager"]
+#       interval: 10s
+#       timeout: 5s
+#       retries: 5
+#       start_period: 5s
+#     volumes:
+#       - stockmanager:/var/lib/postgresql/data:rw
+
+#   backend:
+#     container_name: backend
+#     build: ./backend
+#     command: bash -c "npm run typeorm migration:run -- -d ./src/data-source.ts && npm run dev"
+#     ports:
+#       - 3001:3001
+#     env_file:
+#       - ./backend/.env
+#     depends_on:
+#       - database
+#     volumes:
+#       - .:/usr/app
+
+#   frontend:
+#     container_name: frontend
+#     build: ./frontend
+#     ports:
+#       - 3000:3000
+#     stdin_open: true
+#     volumes:
+#       - ./frontend:usr/app
+#     depends_on:
+#       - database
+#       - backend
+
+# volumes:
+#   stockmanager:
+#     external: true

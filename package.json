@@ -1,0 +1,44 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "module": "ES6",
+  "description": "Aplicação fullstack que é um gerenciador de estoque de produtos",
+  "main": "index.js",
+  "repository": "git@github.com:thdev-matheus/fullstack-stockmanager-react-node.git",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env ts-node-dev --ignore-watch node_modules src/server.ts",
+    "typeorm": "cross-env typeorm-ts-node-commonjs",
+    "build": "tsc",
+    "start": "node dist/src/server.js"
+  },
+  "keywords": [],
+  "author": "Matheus Henrique Vieira Cardoso",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.17",
+    "@types/jsonwebtoken": "^9.0.1",
+    "@types/node": "^18.15.3",
+    "@types/uuid": "^9.0.1",
+    "cross-env": "^7.0.3",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "class-transformer": "^0.5.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^9.0.0",
+    "pg": "^8.10.0",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.1.6",
+    "typeorm": "^0.3.10",
+    "uuid": "^9.0.0",
+    "yup": "^0.32.11"
+  }
+}
