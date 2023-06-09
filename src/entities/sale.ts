@@ -29,7 +29,7 @@ export class Sale {
   description!: string;
 
   @ManyToOne(() => User, {
-    nullable: false,
+    nullable: true,
     eager: true,
     onDelete: "SET NULL",
   })
