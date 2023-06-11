@@ -2,7 +2,11 @@ import * as yup from "yup";
 import { IRecoverPasswordRequest, IUserRequest } from "../types/user";
 
 export const createUserSchema: yup.SchemaOf<IUserRequest> = yup.object().shape({
-  name: yup.string().required("name: campo obrigatório.").min(4).max(30),
+  name: yup
+    .string()
+    .required("name: campo obrigatório.")
+    .min(4, "name: mínimo de 4 caracteres")
+    .max(30, "name: máximo de 30 caracteres"),
 
   password: yup
     .string()
