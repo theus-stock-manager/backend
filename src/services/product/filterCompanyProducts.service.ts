@@ -67,7 +67,7 @@ export const filterCompanyProductsService = async (
     },
   });
 
-  page < 1 || (page * limit > count && (page = 1));
+  page < 1 || ((page - 1) * limit > count && (page = 1));
   limit < 1 && (limit = 5);
 
   const skip = (page - 1) * limit;
