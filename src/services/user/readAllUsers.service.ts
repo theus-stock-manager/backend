@@ -15,7 +15,7 @@ export const readAllUsersService = async (
   const userRepo = AppDataSource.getRepository(User);
   const count = await userRepo.count();
 
-  page < 1 || (page * limit > count && (page = 1));
+  page < 1 || ((page - 1) * limit > count && (page = 1));
   limit < 1 && (limit = 5);
 
   const skip = (page - 1) * limit;
