@@ -14,7 +14,7 @@ export const initStaff = async (): Promise<void> => {
   if (!companyAlreadyExists) {
     const staffCompany = companyRepo.create({
       name: "stock manager staff",
-      image: "https://i.ibb.co/s18dn80/staff-sticker.jpg",
+      image: "https://images2.imgbox.com/a3/c2/mydi6m2C_o.jpg",
     });
 
     await companyRepo.save(staffCompany);
