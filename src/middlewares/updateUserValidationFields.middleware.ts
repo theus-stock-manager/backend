@@ -12,7 +12,7 @@ export const updateUserValidationFieldsMiddleware =
 
       if (
         !data.name &&
-        !data.isAdm &&
+        (data.isAdm === undefined || data.isAdm === null) &&
         !data.password &&
         !data.securityAnswer &&
         !data.securityAsk

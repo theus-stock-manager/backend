@@ -19,7 +19,7 @@ export const updateUserService = async (
 
   await userRepo.update(id, {
     name: name || user.name,
-    isAdm: isAdm || user.isAdm,
+    isAdm: isAdm !== undefined ? isAdm : user.isAdm,
     securityAsk: securityAsk || user.securityAsk,
     securityAnswer: securityAnswer || user.securityAnswer,
     password: password ? hashedPassword : user.password,
